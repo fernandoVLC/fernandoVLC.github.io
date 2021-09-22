@@ -1,0 +1,33 @@
+DROP DATABASE IF EXISTS fusion_db;
+CREATE DATABASE IF NOT EXISTS fusion_db;
+
+USE fusion_db;
+
+CREATE TABLE IF NOT EXISTS gs_results (
+	id_gs INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+	autor VARCHAR(200),
+	titulo VARCHAR(200) NOT NULL,
+	fecha_pub VARCHAR(200) NOT NULL,
+	otros_aut VARCHAR(200),
+	publicado_en VARCHAR(200),
+	num_citaciones INT UNSIGNED
+);
+
+CREATE TABLE IF NOT EXISTS dblp_results (
+	id_dblp INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+	autor VARCHAR(200),
+	titulo VARCHAR(200) NOT NULL,
+	fecha_pub VARCHAR(200) NOT NULL,
+	otros_aut VARCHAR(200),
+	publicado_en VARCHAR(100),
+	doi VARCHAR(100)
+);
+CREATE TABLE IF NOT EXISTS experimento (
+	id_dblp INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+	autor VARCHAR(100),
+	titulo VARCHAR(100) NOT NULL,
+	fecha_pub DATE,
+	otros_aut VARCHAR(200),
+	publicado_en VARCHAR(100),
+	doi VARCHAR(100)
+);
